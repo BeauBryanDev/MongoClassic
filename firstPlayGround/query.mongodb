@@ -1,0 +1,113 @@
+use("M0ngoD0ck3r")
+
+//db.Products.insert( { ProductName : "headphones", Price : 456 , Quantity : 25 })
+
+//db.Products.insert( { ProductName : "wirelessMouse" , Price : 125 , Quantity : 45 })
+
+//db.Products.insertOne( { ProductName : "Airpods" , Price : 425 , Quantity : 35 } ) 
+
+//db.Products.find()
+
+/*
+db.Products.insertMany( [ 
+    {
+        "ProductName": "MonitorScreen",
+        "Price": 325,
+        "Quantity": 65
+    },
+    {
+        "ProductName" : "UPD",
+        "Price" : 285,
+        "Quantity" : 25
+
+    },
+    {
+        "ProductName" : "MaxColorPrinter",
+        "Price" : 625,
+        "Quantity" : 15
+        
+    },
+    {
+        "ProductName" : "HighSpeedScanner",
+        "Price" : 485,
+        "Quantity" : 45
+
+    },
+    {
+        "ProductName" : "SamsungSmartPhone",
+        "Price" : 725,
+        "Quantity" : 25
+
+    },
+    {
+        "ProductName" : "BigTVScreen",
+        "Price" : 985,
+        "Quantity" : 5
+
+    },
+    {
+        "ProductName" : "ExtendedUTP_Cable",
+        "Price" : 85,
+        "Quantity" : 15
+    },
+    {
+        "ProductName" : "AccessPointAdapter",
+        "Price" : 195,
+        "Quantity" : 20
+    },
+    {
+        "ProductName" : "CiscoSwitch",
+        "Price" : 10,
+        "Quantity" : 825
+    },
+    {
+        "ProductName" : "RaizenUProccesor",
+        "Price" : 785,
+        "Quantity" : 20
+    }
+
+ ] )
+
+
+db.Products.updateOne( { 
+    "ProductName" : "CiscoSwitch"
+},
+{   
+    $set : {
+        Price : 950,
+        Quantity : 5
+    }
+}
+
+)
+
+
+
+db.Products.updateOne( 
+    {
+    ProductName : "BigTVScreen"
+
+    },
+    {
+        $inc : {
+            Price : 125 
+        }
+    }
+)
+
+*/
+
+//db.Products.find()
+
+db.Products.updateOne( 
+    {
+        ProductName : "HighSpeedScanner"
+    },
+    {
+        $set : {
+            ProductName : "HighResCamera" ,
+            Price : 465,
+            Quantity : 25 
+        }
+    }
+)
