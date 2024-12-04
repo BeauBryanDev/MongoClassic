@@ -1,0 +1,5 @@
+use("M0ngoD0ck3r")
+
+db.Products.find()
+
+

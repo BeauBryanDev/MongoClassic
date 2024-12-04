@@ -11,7 +11,7 @@ use("M0ngoD0ck3r")
 /*
 db.Products.insertMany( [ 
     {
-        "ProductName": "MonitorScreen",
+        "ProductName"  : "MonitorScreen",
         "Price": 325,
         "Quantity": 65
     },
@@ -80,9 +80,6 @@ db.Products.updateOne( {
 }
 
 )
-
-
-
 db.Products.updateOne( 
     {
     ProductName : "BigTVScreen"
@@ -99,15 +96,64 @@ db.Products.updateOne(
 
 //db.Products.find()
 
-db.Products.updateOne( 
+// db.Products.updateOne( 
+//     {
+//         ProductName : "HighSpeedScanner"
+//     },
+//     {
+//         $set : {
+//             ProductName : "HighResCamera" ,
+//             Price : 465,
+//             Quantity : 25 
+//         }
+//     }
+// )
+
+db.Products.updateMany(
+    { ProductName : "headphones" } ,
+
     {
-        ProductName : "HighSpeedScanner"
-    },
-    {
-        $set : {
-            ProductName : "HighResCamera" ,
-            Price : 465,
-            Quantity : 25 
+
+        $inc : {
+            Price : 144
         }
     }
 )
+
+db.Products.updateOne(
+
+    { _id :  ObjectId('6747a8ef1e053936745b15ed') } ,
+    {
+        $inc: {
+            Price : 125,
+            Quantity : -3
+        }
+    }
+)
+
+db.Products.find( { Price: 456 }).count()
+
+
+db.Products.find()
+
+db.Products.updateOne(
+    { ProductName : "CiscoSwitch"},
+    {
+        $pull : {
+
+            BogStores : "Calle54"
+        }
+    }
+)
+
+db.Products.updateOne(
+    { ProductName: "RaizenUProccesor" },
+    {
+        $pull: {
+            BogStores: { $in: ["Calle54", "ChapineroPlazaq"] }
+        }
+    }
+);
+
+
+db.Products.find()
