@@ -1,0 +1,84 @@
+
+
+db.Products.find({
+    Price: { $gte: 500, $lte: 1100 },
+    Quantity: { $gte: 20 }
+});
+
+
+db.Products.find( { ProductName : { $regex : /Screen/ } } ) 
+
+M0ngoD0ck3r> db.Products.find( { Price: { $gte: 500 } } ,{ Price : 1, Quantity : 1 , ProductName : true  }  )
+[
+
+
+db.Products.find( { Price : { $gte : 500 } } ).projection( { Quantity : { $gte : 15 } }).sort( { Price: 1 } ) 
+
+
+
+db.Products.find(
+  { Price: { $gte: 500 }, Quantity: { $gte: 15 } },
+  { _id: 0, ProductName: 1, Price: 1, Quantity: 1 }
+).sort({ Price: 1 })
+
+
+db.Products.updateOne(
+  { ProductName: "headphones" },
+  { $set: { Price: 250 } }
+)
+
+
+db.Products.find(
+  { Price: { $gte: 500 }, Quantity: { $gte: 15 } , BogStores: { $in : [ { $regex : /1mayo/ } } } )
+  
+  
+
+db.Products.find( { BogStores : { $in : [ "Avenida1Mayo" ] } } )
+
+
+db.Products.find({
+  Price: { $gte: 500 },
+  Quantity: { $gte: 1 },
+  BogStores: { $in: [/1mayo/] }
+})
+
+
+Operadores de arrays:
+
+$in => para seleccionar documentos que tengan un campo con un valor que coincida con cualquiera de los valores especificados en un array.
+
+$nin => selecciona documentos que no tengan un campo con un valor que coincida con ninguno de los valores especificados en un array. (Contrario a $in)
+
+$all => selecciona documentos que tengan un campo con un array que contenga todos los valores especificados en la consulta.
+
+$elemMatch => para seleccionar documentos que tengan un campo con un array que contenga al menos un elemento que cumpla con ciertos criterios de consulta.
+
+$size => selecciona documentos que tengan un campo con un array de un tamaño específico.
+
+
+Operadores Logicos : 
+
+$and => que cumpla las dos o más condiciones dadas.
+$or => los que cumplan al menos una condición.
+$nor => los que no cumplan con ninguna condición.
+$not => excluye un elemento en especifico y no tiene forma de array
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
